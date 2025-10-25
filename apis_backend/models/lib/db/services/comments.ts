@@ -1,10 +1,5 @@
 import pool from "../index";
 
-export type comments = {
-  comment: string;
-  post_id: number;
-  user_id: number;
-};
 
 /*
 CREATE TABLE comments (
@@ -35,6 +30,12 @@ CREATE TABLE comments_2028_04 PARTITION OF comments
   FOR VALUES FROM ('2027-12-31') TO ('2028-12-31');
 
 */
+
+export type comments = {
+  comment: string;
+  post_id: number;
+  user_id: number;
+};
 
 export const CreateComment = async (comment: comments) => {
   const result = await pool.query<comments>(

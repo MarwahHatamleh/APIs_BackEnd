@@ -1,7 +1,5 @@
 import pool from "../index";
 
-
-
 // CREATE TABLE follows (
 //    id SERIAL PRIMARY KEY NOT NULL,
 //    following_id INTEGER NOT NULL,

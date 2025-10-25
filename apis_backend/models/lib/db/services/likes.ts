@@ -9,7 +9,6 @@ import pool from "..";
 //       FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE ,
 //       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 //      UNIQUE (user_id, post_id ,id)
-
 // )
 
 

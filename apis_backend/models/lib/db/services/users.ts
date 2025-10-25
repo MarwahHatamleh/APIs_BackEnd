@@ -3,32 +3,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { Secret, SignOptions } from "jsonwebtoken";
 
-export type RegisterUser = {
-  id?: number;
-  userName: string;
-  age: number;
-  country: string;
-  phoneNumber: string;
-  email: string;
-  password: string;
-  role_id: number;
-
-};
-
-export type LoginUser = {
-  email: string;
-  password: string;
-};
-
-export type UpdateUserInfo = {
-  userName: string;
-  age: number;
-  country: string;
-  phoneNumber: string;
-  email: string;
-  password: string;
-  role_id: number;
-};
 
 // CREATE INDEX index_user_id ON users (id);
 
@@ -63,6 +37,34 @@ export type UpdateUserInfo = {
 //   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 //      UNIQUE (phoneNumber, created_at , email , id)
 // ) PARTITION BY Hash (id)
+
+
+export type RegisterUser = {
+  id?: number;
+  userName: string;
+  age: number;
+  country: string;
+  phoneNumber: string;
+  email: string;
+  password: string;
+  role_id: number;
+
+};
+
+export type LoginUser = {
+  email: string;
+  password: string;
+};
+
+export type UpdateUserInfo = {
+  userName: string;
+  age: number;
+  country: string;
+  phoneNumber: string;
+  email: string;
+  password: string;
+  role_id: number;
+};
 
 const hashPassword = async (password: string) => {
   const result =  await bcrypt.hash(password, 10);
