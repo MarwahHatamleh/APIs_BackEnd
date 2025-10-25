@@ -45,7 +45,7 @@ Here : user is able to :
 
 10- Get all comment for each job 
 
-11- Get owns comments
+11- Get own comments
 
 12- Like on post
 
@@ -76,22 +76,22 @@ In project is i meant  to make a fully a system design for all tables
 
 - Added Indexes and Partitions 
 
-As : i create index on users , posts , comments to make the query performance so instant and quickly as we know the indexed make it speed queries for filrering and search so speed  based on B-tree as not as liner 
+As : i create index on users , posts , comments to make the query performance so instant and quickly as we know the indexes make it speed queries for filtering and search so speed  based on B-tree as not as liner 
 
 so liner > takes O(n)
 now based on B-tree it will take O(Logn) >> So it improve the performance
 
-And i decided to Patitions on posts and users and PUT uniqueness  on email and phone number as global one not working so we need always put uniqueness  on patitions level   on hash(id) to set users when they are created their accounts based on partitions as that lead to less of load on tables , easy to filter on users , Scalability ,query performance , maintainability 
+And i decided to Partitions on posts and users and PUT uniqueness  on email and phone number as global one not working so we need always put uniqueness  on patitions level   on hash(id) to set users when they are created their accounts based on partitions as that lead to less of load on tables , easy to filter on users , Scalability ,query performance, maintainability 
 
 so again  >> create unique constraints on the partitions. on email and phone number That will guarantee uniqueness within each partition, but not global uniqueness
 
 
-and it is helps in Horizontal scaling >> handle multi data across nodes/servers and do it by partitions within the same database/server. but let be clear the postgreSQL not support the sharding like MongoDB but let is say partitions will be help to reduce the load and searching on resouces 
+and it is helps in Horizontal scaling >> handle multi data across nodes/servers and do it by partitions within the same database/server. but let be clear PostgreSQL not support the sharding like MongoDB but let is say partitions will be help to reduce the load and searching on resources 
 
 Decided to put for Modules for now as it is small app for now and in the future wehen the app grows we can scaling it to has more than MODULUS : 
 Small app → MODULUS 4 by hash(id)
 
-During working on following table in a little a bit i decided to add partitions on follows table but thats was wrong decisions bec thats will lead on duplicate ids and make other people following each other as infinte loop 
+During working on the following table in a little a bit i decided to add partitions on follows table but thats was wrong decisions bec thats will lead on duplicate ids and make other people follow each other as infinite loop 
 
 
 also during a design a system i decided to add on cnflict via insert  on the following  table as checking that  the following and follower not able to dublicate each other again in the table at all and and check constraint "check(following_id <> follower_id)" on table via creating to not able  the following and follower to  be the SAME PERSON as follow himself/herself
@@ -99,12 +99,12 @@ also during a design a system i decided to add on cnflict via insert  on the fol
 but on likes i decided to put also on conflict via insert table as make sure the post_id and user_id not dublicated on table but here in general the user can put on his/her post like so i did not prevent that 
 
 
-i decided to not put partitions on comments or another tables for now to make it simple 
+i decided not to put partitions on comments or another tables for now to make it simple 
 
-as "Don't Partition Untill you have scaling problem "
+as "Don't Partition Untill you have a scaling problem "
 
-so decided to design for partitions as comments,follows,likes will be on created_at (time)
-to make filtering so easy on them and decided on time as thats will be so effecient and need to take into consideration to search on last 3 months that user commented OR deleted the Old data so i am sure the partitions based on "created_at" time  will good and achieve the goal 
+so decided to design for partitions as comments, follows,likes will be on created_at (time)
+to make filtering so easy on them and decided on time as thats will be so efficient and need to take into consideration to search on the last 3 months that user commented OR deleted the Old data so i am sure the partitions based on "created_at" time  will be good and achieve the goal 
 
 APIs-Collection : [FindlyJob.postman_collection.json](https://github.com/user-attachments/files/23144342/FindlyJob.postman_collection.json)
 
