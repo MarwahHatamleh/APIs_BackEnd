@@ -1,4 +1,5 @@
-[FindlyJob.postman_collection.json](https://github.com/user-attachments/files/23144342/FindlyJob.postman_collection.json)# APIs_BackEnd
+
+# APIs_BackEnd
 
 This project is Back-End project 
 As it has a fully APIs with connecting with Neon (PostgreSQL)
@@ -78,7 +79,8 @@ as "Don't Partition Untill you have scaling problem "
 so decided to design for partitions as comments,follows,likes will be on created_at (time)
 to make filtering so easy on them and decided on time as thats will be so effecient and need to take into consideration to search on last 3 months that user commented OR deleted the Old data so i am sure the partitions based on "created_at" time  will good and achieve the goal 
 
-APIs-Collection : 
+APIs-Collection : [FindlyJob.postman_collection.json](https://github.com/user-attachments/files/23144342/FindlyJob.postman_collection.json)
+
 
 
 DB Schema : 
