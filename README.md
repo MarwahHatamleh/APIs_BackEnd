@@ -39,6 +39,15 @@ Here : user is able to :
 
 In project is i meant  to make a fully a system design for all tables 
 
+Security :
+ - Added Middlewares (auth , authz)
+
+ I added permissions and role for each user and warp each handler with proper permission to make only authz peron to create and manage data 
+ and add auth to check JWT token to check whos this user and whats permissions he/she has via payload.
+
+
+Performance and scalability on DB and APIs :
+
 As : i create index on users , posts , comments to make the query performance so instant and quickly as we know the indexed make it speed queries for filrering and search so speed  based on B-tree as not as liner 
 
 so liner > takes O(n)

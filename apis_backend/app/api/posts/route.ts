@@ -7,9 +7,9 @@ import { authorize } from "../../middleware/authz";
 import { auth } from "../../middleware/auth";
 
 export const POST = auth(
-  authorize(["create"])(async (req: NextRequest) => {
+  authorize(["create"])(async (request: Request) => {
     try {
-      const body = await req.json();
+      const body = await request.json();
       const result = await CreatePost(body);
       return NextResponse.json(result, { status: 201 });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,7 +20,7 @@ export const POST = auth(
 );
 
 export const GET = auth(
-  authorize(["read"])(async (request: NextRequest) => {
+  authorize(["read"])(async (request: Request) => {
     try {
       const url = new URL(request.url);
       const limit = url.searchParams.get("limit");

@@ -1,7 +1,10 @@
 import { Login } from "../../../../models/lib/db/services/users";
 import { NextResponse } from "next/server";
+import { auth } from "../../../middleware/auth";
+import { authorize } from "../../../middleware/authz";
 
-export const POST = async (request: Request) => {
+export const POST = auth(
+  authorize(["create"])(async (request: Request) => {
   const { email, password } = await request.json();
   try {
     const result = await Login(email, password);
@@ -26,5 +29,5 @@ export const POST = async (request: Request) => {
       }
     );
   }
-};
+}));
 

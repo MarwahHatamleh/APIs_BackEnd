@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { unlike } from "../../../../models/lib/db/services/likes";
 
+
 export const DELETE = async (
   request: Request,
   params: {
@@ -13,7 +14,7 @@ export const DELETE = async (
     const userID = url.searchParams.get("userID");
 
     if (!id || !userID) throw new Error(" id or user'id not defined");
-    
+
     const result = await unlike(+id, +userID);
     return NextResponse.json(result, { status: 200 });
 

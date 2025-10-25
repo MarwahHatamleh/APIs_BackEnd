@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { like } from "../../../models/lib/db/services/likes";
+import { auth } from "../../middleware/auth";
+import { authorize } from "../../middleware/authz";
 
-export const POST = async (request: Request) => {
+export const POST = auth(
+  authorize(["create"])(async (request: Request) => {
   try {
     
     const body = await request.json();
@@ -14,4 +17,4 @@ export const POST = async (request: Request) => {
       status: 404,
     });
   }
-};
+}));
