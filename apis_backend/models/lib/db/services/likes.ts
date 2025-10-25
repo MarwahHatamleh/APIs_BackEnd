@@ -8,8 +8,8 @@ import pool from "..";
 //       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
 //       FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE ,
 //       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-//      UNIQUE (user_id, post_id ,id)
-// )
+//      UNIQUE (user_id, post_id ,id , created_at)
+// ) PARTITION BY RANGE (created_at)
 
 
 

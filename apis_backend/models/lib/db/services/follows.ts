@@ -7,10 +7,10 @@ import pool from "../index";
 //    FOREIGN KEY (following_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
 //    FOREIGN KEY (follower_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
 //    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-//    UNIQUE (follower_id, following_id),
+//    UNIQUE (follower_id, following_id , created_at),
 //   CHECK (follower_id <> following_id)
 // )
-// PARTITION BY Hash (id)
+// PARTITION BY RANGE (created_at)
 
 
 //  CREATE TABLE follow_p0 PARTITION OF follows FOR VALUES WITH (MODULUS 4, REMAINDER 0);
