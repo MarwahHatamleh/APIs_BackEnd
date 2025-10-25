@@ -5,6 +5,7 @@ import { Secret, SignOptions } from "jsonwebtoken";
 
 
 // CREATE INDEX index_user_id ON users (id);
+// CREATE INDEX index_email ON users (email);
 
 // \d users
 //\d+ users

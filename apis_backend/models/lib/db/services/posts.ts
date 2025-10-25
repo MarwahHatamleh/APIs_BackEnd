@@ -142,3 +142,12 @@ export const FilterPostBySalary = async (salary: number) => {
   );
   return result.rows;
 };
+
+
+export const GetPostByUserIdAndTime = async(id : number) =>{
+  const result = await pool.query(
+    `SELECT * FROM posts WHERE users_id = $1  AND created_at >= NOW() - INTERVAL '7 days'`,
+    [id]
+  );
+  return result.rows;
+}
