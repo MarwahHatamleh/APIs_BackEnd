@@ -5,8 +5,7 @@ This project is Back-End project
 As it has a fully APIs with connecting with Neon (PostgreSQL)
 As it for Job site
 
-Resource :
-Exceel Sheet For System and APIs design >> https://1drv.ms/x/c/79f76ce63334d821/Ecu_dkYLDo1OvyV5Po5CrI4BWWm-qaIsxL3pQM7TG9VDGw?e=0MF8z8
+System and APIs design : https://1drv.ms/x/c/79f76ce63334d821/Ecu_dkYLDo1OvyV5Po5CrI4BWWm-qaIsxL3pQM7TG9VDGw?e=0MF8z8
 
 
 
