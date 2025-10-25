@@ -10,6 +10,7 @@ System and APIs design : https://1drv.ms/x/c/79f76ce63334d821/Ecu_dkYLDo1OvyV5Po
 
 
 #Foucs : 
+
 1- Data Model 
 
 2- Access patterns 
@@ -23,6 +24,7 @@ System and APIs design : https://1drv.ms/x/c/79f76ce63334d821/Ecu_dkYLDo1OvyV5Po
 "Anticipate Growth but keep things simple early"
 
 Here : user is able to :
+
 1-  Register
 
 2 - Login
@@ -59,6 +61,8 @@ Here : user is able to :
 
 In project is i meant  to make a fully a system design for all tables 
 
+
+
 #Security :
 
  - Added Middlewares (auth , authz)
@@ -69,6 +73,8 @@ In project is i meant  to make a fully a system design for all tables
 
 
 #Performance and scalability on DB and APIs :
+
+- Added Indexes and Partitions 
 
 As : i create index on users , posts , comments to make the query performance so instant and quickly as we know the indexed make it speed queries for filrering and search so speed  based on B-tree as not as liner 
 
