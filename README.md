@@ -11,9 +11,13 @@ System and APIs design : https://1drv.ms/x/c/79f76ce63334d821/Ecu_dkYLDo1OvyV5Po
 
 Foucs : 
 1- Data Model 
+
 2- Access patterns 
+
 3- indexing stoarge 
+
 4- scalability plan when the data grows
+
 5- stoarge optimizations (like partitions)
 
 "Anticipate Growth but keep things simple early"
