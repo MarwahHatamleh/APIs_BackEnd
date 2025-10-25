@@ -9,7 +9,7 @@ System and APIs design : https://1drv.ms/x/c/79f76ce63334d821/Ecu_dkYLDo1OvyV5Po
 
 
 
-Foucs : 
+#Foucs : 
 1- Data Model 
 
 2- Access patterns 
@@ -24,33 +24,51 @@ Foucs :
 
 Here : user is able to :
 1-  Register
+
 2 - Login
+
 3- Rest Password 
+
 4- Get Profile Info
+
 5- Deactivate Account
+
 6 - Update Profile Info
-7- create a comment 
+
+7- create a comment
+
 8- delete a comment
+
 9- update a comment
+
 10- Get all comment for each job 
+
 11- Get owns comments
+
 12- Like on post
+
 13- unlike on post 
+
 14- Follow another user
+
 15 - unfollow another user
+
 16- get all post for all user that you followed
+
 17- get all post you posted
 
 In project is i meant  to make a fully a system design for all tables 
 
-Security :
+#Security :
+
  - Added Middlewares (auth , authz)
 
  I added permissions and role for each user and warp each handler with proper permission to make only authz peron to create and manage data 
  and add auth to check JWT token to check whos this user and whats permissions he/she has via payload.
 
 
-Performance and scalability on DB and APIs :
+
+#Performance and scalability on DB and APIs :
 
 As : i create index on users , posts , comments to make the query performance so instant and quickly as we know the indexed make it speed queries for filrering and search so speed  based on B-tree as not as liner 
 
