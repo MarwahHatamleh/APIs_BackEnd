@@ -76,7 +76,7 @@ In project is i meant  to make a fully a system design for all tables
 
 - Added Indexes and Partitions 
 
-As : i create index on users , posts , comments to make the query performance so instant and quickly as we know the indexes make it speed queries for filtering and search so speed  based on B-tree as not as liner 
+As : i create index on users , posts , comments to make the query performance so instant and quickly as we know the indexes make the queries speed for filtering and search so speed  based on B-tree as not as liner 
 
 so liner > takes O(n)
 now based on B-tree it will take O(Logn) >> So it improve the performance
